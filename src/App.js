@@ -1,162 +1,73 @@
 // Print Student Table
 // Table
 // Roll No, Student Name, Standard
-// 1, Karun Kamal, 10th 
+// 1, Karun Kamal, 10th
 // 2, Saloni, 7th
 // 3, Arun, Btech
-import React from 'react'
-
-// const Student = () => {
-
-// }
-
+import React from "react";
 class StudentList extends React.Component {
+  render() {
+    return (
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Roll No</th>
+              <th>Standard</th>
+            </tr>
+          </thead>
+        <tbody>
+              {this.props.students.map((student, i)=>{
+                    return <tr key={i}>
+                          <td >{student.name}</td>
+                          <td >{student.id}</td>
+                          <td >{student.Standard}</td>
 
-      render() {
-            return (
-                  <div>
-                        <ul>
-                              {this.props.students.filter((student, index) => {
-                                    let re = RegExp('Shi*','g');
-                                    return re.test(student.name);
-                              }).map((student, i) => {
-                                    return <li key={i}>{student.name}</li>
-                                    
-                              })}
-
-                        </ul>
-                  </div>
-            )
-      }
+                    </tr>
+              })}
+        </tbody>
+        </table>
+      </div>
+    );
+  }
 }
-
-
-
-
 
 class App extends React.Component {
-      render() {
-            return (
-                  <StudentList students={[
-                        {
-                              "name": "Hall Parker"
-                        },
-                        {
-                              "name": "Terrie Underwood"
-                        },
-                        {
-                              "name": "Briana Britt"
-                        },
-                        {
-                              "name": "Lara Cardenas"
-                        },
-                        {
-                              "name": "Wilder Ware"
-                        },
-                        {
-                              "name": "Shirley Burton"
-                        },
-                        {
-                              "name": "Goodwin Hodges"
-                        },
-                        {
-                              "name": "Herrera Carson"
-                        },
-                        {
-                              "name": "Julia Kennedy"
-                        },
-                        {
-                              "name": "Baldwin Estrada"
-                        },
-                        {
-                              "name": "Shirley Setia"
-                        },
-                        {
-                              "name": "Mae Galloway"
-                        },
-                        {
-                              "name": "Diaz Benson"
-                        },
-                        {
-                              "name": "Reeves Hancock"
-                        },
-                        {
-                              "name": "Mercer Donovan"
-                        },
-                        {
-                              "name": "Sharon Wilkerson"
-                        },
-                        {
-                              "name": "Atkinson Rosa"
-                        },
-                        {
-                              "name": "Deloris Mcmillan"
-                        },
-                        {
-                              "name": "Lindsay Emerson"
-                        },
-                        {
-                              "name": "Esperanza Kirkland"
-                        },
-                        {
-                              "name": "Shirley Galloway"
-                        },
-                        {
-                              "name": "Johnson Baker"
-                        },
-                        {
-                              "name": "Cain Juarez"
-                        },
-                        {
-                              "name": "Sparks Ford"
-                        },
-                        {
-                              "name": "Deidre Moon"
-                        },
-                        {
-                              "name": "Calhoun Kemp"
-                        },
-                        {
-                              "name": "Everett Brock"
-                        },
-                        {
-                              "name": "Ana Nixon"
-                        },
-                        {
-                              "name": "Melissa Pena"
-                        },
-                        {
-                              "name": "Hardy Santiago"
-                        },
-                        {
-                              "name": "Sofia Moss"
-                        },
-                        {
-                              "name": "Phelps Hull"
-                        },
-                        {
-                              "name": "Jerri Raymond"
-                        },
-                        {
-                              "name": "Newman Vinson"
-                        },
-                        {
-                              "name": "Wyatt Clarke"
-                        },
-                        {
-                              "name": "Magdalena Whitaker"
-                        }
-                  ]
-                  } />
-            );
-      }
+  render() {
+    return (
+      <StudentList
+        students={[
+          {
+            name: "Hall Parker",
+            id: 1,
+            Standard: "10th"
+          },
+          {
+            name: "Terrie Underwood",
+            id: 2,
+            Standard: "10th"
+          },
+          {
+            name: "Briana Britt",
+            id: 3,
+            Standard: "11th"
+          },
+          {
+            name: "Lara Cardenas",
+            id: 4,
+            Standard: "11th"
+          },
+          {
+            name: "Wilder Ware",
+            id: 5,
+            Standard: "11th"
+          }
+        ]}
+      />
+    );
+  }
 }
-
-
-
-
-
-
 
 // import React from 'react'
 
@@ -164,4 +75,4 @@ class App extends React.Component {
 //       Hello world
 //    </h1>)
 
-export default App 
+export default App;
