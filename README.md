@@ -1,0 +1,2 @@
+# skiDay
+react/redux-app
