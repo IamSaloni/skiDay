@@ -5,6 +5,7 @@
 // 2, Saloni, 7th
 // 3, Arun, Btech
 import React from "react";
+import PropTypes from "prop-types"
 
 
 
@@ -75,4 +76,18 @@ class App extends React.Component {
       }
 }
 
+Student.defaultProps = {
+      name: "Student",
+      id: null,
+      standard: ""
+}
+Student.propTypes = {
+      name:PropTypes.string,
+      id:PropTypes.number,
+      standard:PropTypes.string
+}
+
+StudentList.propTypes = {
+      students:PropTypes.array
+}
 export default App;
