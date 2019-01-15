@@ -3,6 +3,7 @@ import React from 'react'
 // import {TiWeatherSnow} from 'react-icons/ti'
 // import {FaCalendarAlt} from 'react-icons/fa'
 import SkiDayRow from './SkiDayRow'
+import PropTypes from 'prop-types';
 
 const SkiDayList = ({days}) => ( //props.days
     <table>
@@ -26,5 +27,9 @@ const SkiDayList = ({days}) => ( //props.days
     </table>
 )
 
+
+SkiDayList.propTypes = {
+    days: PropTypes.array
+}
 export default SkiDayList
 

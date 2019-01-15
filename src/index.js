@@ -27,7 +27,7 @@ ReactDOM.render(
                 date: new Date("2019-1-18"),
                 powder:false,
                 backcountry:true
-            }
+            },
         ]
     } />,
     document.getElementById('react-container'));

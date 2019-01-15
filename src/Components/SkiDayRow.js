@@ -2,6 +2,7 @@ import React from 'react'
 import { MdTerrain } from 'react-icons/md'
 import { TiWeatherSnow } from 'react-icons/ti'
 // import { FaCalendarAlt } from 'react-icons/fa'
+import PropTypes from 'prop-types';
 
 const SkiDayRow = ({date,resort,powder,backcountry}) => (
     <tr>
@@ -20,4 +21,17 @@ const SkiDayRow = ({date,resort,powder,backcountry}) => (
     </tr>
 )
 
+SkiDayRow.defaultProps = {
+    date: new Date(),
+    resort:"Name not Defined",
+    powder:null,
+    backcountry:null
+}
+
+SkiDayRow.propTypes = {
+        date: PropTypes.object,
+        resort:PropTypes.string,
+        powder:PropTypes.bool,
+        backcountry:PropTypes.bool
+}
 export default SkiDayRow
