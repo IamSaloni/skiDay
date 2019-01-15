@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../stylesheets/ui.scss'
 import {MdTerrain} from 'react-icons/md'
 import {TiWeatherSnow} from 'react-icons/ti'
@@ -44,7 +44,7 @@ SkiDayCount.defaultProps = {
     goal:100
 }
 
-SkiDayCount.PropTypes={
+SkiDayCount.propTypes={
     total:PropTypes.number,
     powder:PropTypes.number,
     backcountry:PropTypes.number,

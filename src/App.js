@@ -1,93 +1,66 @@
-// Print Student Table
-// Table
-// Roll No, Student Name, Standard
-// 1, Karun Kamal, 10th
-// 2, Saloni, 7th
-// 3, Arun, Btech
-import React from "react";
-import PropTypes from "prop-types"
 
+import React, {Fragment} from "react";
 
-
-const Student = ({name,  id, standard}) => (
-      <tr>
-
-            <td>{name}</td>
-            <td>{id}</td>
-            <td>{standard}</td>
-      </tr>
-
-)
-
-
-
-class StudentList extends React.Component {
-      render() {
-            return (
-                  <div>
-                        <table>
-                              <thead>
-                                    <tr>
-                                          <th>Student Name</th>
-                                          <th>Roll No</th>
-                                          <th>Standard</th>
-                                    </tr>
-                              </thead>
-                              <tbody>
-                                    {this.props.students.map((student, i) => {
-                                          return <Student key={i}
-                                                            name={student.name}
-                                                            id={student.id}
-                                                            standard={student.standard} />
-                                    })}
-                              </tbody>
-                        </table>
-                  </div>
-            );
-      }
-}
+// import StudentList from "./Components/StudentList"
+import SkiDayList from "./Components/SkiDayList"
+import SkiDayCount from "./Components/SkiDayCount"
 
 class App extends React.Component {
-
-      componentDidMount() {
-            
+      constructor(props) {
+            super(props);
+            this.state = {
+                  allSkiDays : [
+                        {
+                            resort: "Squaw Valley",
+                            date: new Date("2019-1-14"),
+                            powder:true,
+                            backcountry:false
+                        },
+                        {
+                            resort: "Kirkwood",
+                            date: new Date("2019-1-15"),
+                            powder:false,
+                            backcountry:false
+                        },
+                        {
+                            resort: "Mt. Tallac",
+                            date: new Date("2019-1-18"),
+                            powder:false,
+                            backcountry:true
+                        },
+                    ]
+            }
       }
       render() {
             return (
-                  <StudentList
-                        students={[
-                              {
-                                    "name": "Hall Parker",
-                                    "id": 1,
-                                    "standard": "10th"
-                              },
-                              {
-                                    "name": "Terrie Underwood",
-                                    "id": 2,
-                                    "standard": "10th"
-                              }, {
-                                    "name": "Hall Parker",
-                                    "id": 4,
-                                    "standard": "10th"
-                              }]
-                        }
-                  />
-            );
+                  // <StudentList
+                  //       students={[
+                  //             {
+                  //                   "name": "Hall Parker",
+                  //                   "id": 1,
+                  //                   "standard": "10th"
+                  //             },
+                  //             {
+                  //                   "name": "Terrie Underwood",
+                  //                   "id": 2,
+                  //                   "standard": "10th"
+                  //             }, {
+                  //                   "name": "Hall Parker",
+                  //                   "id": 4,
+                  //                   "standard": "10th"
+                  //             }]
+                  //       }
+                  // />
+                  <Fragment>
+                  <SkiDayList days={
+                        this.state.allSkiDays
+                    } />
+                  <SkiDayCount />
+                  </Fragment>
+            )
       }
 }
 
-Student.defaultProps = {
-      name: "Student",
-      id: null,
-      standard: ""
-}
-Student.propTypes = {
-      name:PropTypes.string,
-      id:PropTypes.number,
-      standard:PropTypes.string
-}
 
-StudentList.propTypes = {
-      students:PropTypes.array
-}
+
 export default App;
