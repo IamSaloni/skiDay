@@ -16,14 +16,15 @@ const SkiDayList = ({days}) => ( //props.days
         </thead>
         <tbody>
             {days.map((day, i) => <SkiDayRow key={i}
-                            resort={day.resort}
-                            date={day.date}
-                            powder={day.powder}
-                            backcountry={day.backcountry}
-                            />
+                            // resort={day.resort}
+                            // date={day.date}
+                            // powder={day.powder}
+                            // backcountry={day.backcountry}
+                            {...day} />
             )}
         </tbody>
     </table>
 )
 
 export default SkiDayList
+
