@@ -31,7 +31,7 @@ class App extends React.Component {
         }
       ]
     };
-    this.countDays = this.countDays.bind(this); 
+    this.countDays = this.countDays.bind(this);
   }
 
   countDays(cond) {
@@ -89,6 +89,6 @@ export default App;
                   // />
 
 
-                  //allskiDays 
-                  // if that skiday is powder day 
+                  //allskiDays
+                  // if that skiday is powder day
                   //
