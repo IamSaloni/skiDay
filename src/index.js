@@ -5,7 +5,7 @@ import App from './App';
 // import SkiDayCount from './Components/SkiDayCount'
 import * as serviceWorker from './serviceWorker';
 // import SkiDayList from './Components/SkiDayList'
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import Error404 from './Components/Error404'
 import StudentList from './Components/StudentList';
 import Houses from './Components/Houses';
@@ -40,10 +40,13 @@ ReactDOM.render(
 
    <Router>
        <div>
+       <Switch>
             <Route path="/" exact  component={App} />
             <Route path="/student"  component={StudentList} />
             <Route path="/houses"  component={Houses} />
-            <Route path="*" exact component={Error404} />
+            
+            <Route component={Error404} />
+            </Switch>
         </div>
    </Router>,
 
