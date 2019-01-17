@@ -1,9 +1,10 @@
 
-import React, {Fragment} from "react";
+import React from "react";
 
 // import StudentList from "./Components/StudentList"
 import SkiDayList from "./Components/SkiDayList"
 import SkiDayCount from "./Components/SkiDayCount"
+import AddDayForm from "./Components/AddDayForm"
 import { all } from "q";
 
 class App extends React.Component {
@@ -35,10 +36,8 @@ class App extends React.Component {
   }
 
   countDays(cond) {
-    // cond = "powder", "backcountry", undefined
     if(cond) {
       return this.state.allSkiDays.filter((skiDay, index) => {
-            //return skiday.powder, siDay.backcountry // we didnt use this to use the cond variable passed in function
             return skiDay[cond];
           }).length;
     }
@@ -50,15 +49,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <Fragment>
-        <SkiDayList days={this.state.allSkiDays} />
-        <SkiDayCount
-          total={this.countDays()}
-          powder={this.countDays("powder")}
-          backcountry={this.countDays("backcountry")}
-          goal={100}
-        />
-      </Fragment>
+      <div className="app">
+      {(this.props.location.pathname === "/list-days")?
+      <SkiDayCount
+      total={this.countDays()}
+      powder={this.countDays("powder")}
+      backcountry={this.countDays("backcountry")}
+      goal={100}
+    /> :
+    (this.props.location.pathname === "/add-day")?
+    <AddDayForm /> :<SkiDayList days={this.state.allSkiDays} />}
+     </div>
     );
   }
 }
@@ -66,29 +67,3 @@ class App extends React.Component {
 
 
 export default App;
-
-
-
- // <StudentList
-                  //       students={[
-                  //             {
-                  //                   "name": "Hall Parker",
-                  //                   "id": 1,
-                  //                   "standard": "10th"
-                  //             },
-                  //             {
-                  //                   "name": "Terrie Underwood",
-                  //                   "id": 2,
-                  //                   "standard": "10th"
-                  //             }, {
-                  //                   "name": "Hall Parker",
-                  //                   "id": 4,
-                  //                   "standard": "10th"
-                  //             }]
-                  //       }
-                  // />
-
-
-                  //allskiDays
-                  // if that skiday is powder day
-                  //

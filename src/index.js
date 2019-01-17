@@ -10,32 +10,6 @@ import Error404 from './Components/Error404'
 import StudentList from './Components/StudentList';
 import Houses from './Components/Houses';
 
-// ReactDOM.render(
-
-//     <SkiDayList days={
-//         [
-//             {
-//                 resort: "Squaw Valley",
-//                 date: new Date("2019-1-14"),
-//                 powder:true,
-//                 backcountry:false
-//             },
-//             {
-//                 resort: "Kirkwood",
-//                 date: new Date("2019-1-15"),
-//                 powder:false,
-//                 backcountry:false
-//             },
-//             {
-//                 resort: "Mt. Tallac",
-//                 date: new Date("2019-1-18"),
-//                 powder:false,
-//                 backcountry:true
-//             },
-//         ]
-//     } />,
-//     document.getElementById('react-container'));
-
 ReactDOM.render(
 
    <Router>
@@ -43,8 +17,9 @@ ReactDOM.render(
        <Switch>
             <Route path="/" exact  component={App} />
             <Route path="/student"  component={StudentList} />
+            <Route path="/list-days" component={App}/>
+            <Route path="/add-day" component={App}/>
             <Route path="/houses"  component={Houses} />
-            
             <Route component={Error404} />
             </Switch>
         </div>
