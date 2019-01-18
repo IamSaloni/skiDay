@@ -16,8 +16,9 @@ ReactDOM.render(
        <div>
        <Switch>
             <Route path="/" exact  component={App} />
-            <Route path="/student"  component={StudentList} />
+            <Route path="/student"  component={App} />
             <Route path="/list-days" component={App}/>
+            <Route path=":filter" component={App}/>
             <Route path="/add-day" component={App}/>
             <Route path="/houses"  component={Houses} />
             <Route component={Error404} />
